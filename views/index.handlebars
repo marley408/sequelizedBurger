@@ -1,0 +1,48 @@
+<div id="container">
+
+  <h1>Eat-Da-Burger!</h1>
+
+  <img src="/assets/img/burger.png" alt="Burger" height="300" width="300">
+
+  <div id="burgerDisplay">
+
+    <div id="burgers">
+      <div id ="notDevoured">
+        <ol>
+          {{#each burgers}}
+            {{#unless devoured}}
+            <div class="burger">
+              <li>
+                <h3>{{burger_name}}</h3>
+                <button class="devoured-burger" data-id="{{id}}">Devour!</button>
+              </li>
+            </div> 
+            {{/unless}}
+          {{/each}}
+          </ol>
+      </div>
+
+
+      <div id="devoured">
+        <ol>
+        {{#each burgers}}
+          {{#if devoured}}
+          <div class="burger">
+            <li>
+              <h3>{{burger_name}}</h3>
+            </li>
+          </div> 
+          {{/if}}
+        {{/each}}
+        </ol>
+      </div>
+    </div>
+
+
+    <form method="POST">
+      <input class= "create-burger" id="burgerNameInput" name="burgerName" placeholder="Burger name"/>
+      <button id ="submit" type= "submit">Submit</button>
+    </form>
+
+    <h3>Enter a burger you want to eat. </h3>
+  </div>
